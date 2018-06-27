@@ -37,11 +37,9 @@ defaults:
     layout: 'default'
 
 exclude:
-- CNAME
-- deploy.sh
+- .sass-cache
 - Gemfile
-- gulpfile.babel.js
-- LICENSE
+- node_modules
 - README.md
 - vendor
 
