@@ -1,28 +1,38 @@
-# Only committing dist folder for now (Ginestra)
-# Ignore everything:
-# *
+# Folder view configuration files
+_Store
+.DS_Store*
+Desktop.ini
+Icon
 
-# Except for the themes directories:
-# !dist/
-# !.gitignore
+# Thumbnail cache files
+._*
+Thumbs.db
 
-# Unit test / coverage reports
-htmlcov/
-.tox/
-.coverage
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*,cover
+# Files that might appear on external disks
+.Spotlight-V100
+.Trashes
 
-# Local
-.DS_Store
+# Packages
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
 
-# node stuff
-node_modules
+# Logs and databases
+*.log
+*.sql
+*.sqlite
 
-# bower stuff
-bower_components
+# Jekyll
+.jekyll-metadata
+_site/
 
-dist
+# Sass
+.sass-cache
+
+# Lockfiles
+*.lock
