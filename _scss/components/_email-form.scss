@@ -28,6 +28,7 @@
     }
 
     [type="submit"] {
+        @include v(color, white);
         @include absolute(full);
     }
 }

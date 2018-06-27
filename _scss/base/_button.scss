@@ -9,10 +9,10 @@ button,
     @extend %button-elements !optional;
     @include font-family(title);
     @include non-selectable;
-    @include transition(background-color);
-    @include will-change(background-color, height, padding-bottom, margin-bottom, box-shadow, transform);
-    @include v(background-color, orange);
-    @include v(color, white);
+    @include transition(background-color, color, box-shadow, transform);
+    @include will-change(background-color, color, box-shadow, transform);
+    background-color: transparent;
+    @include v(color, black);
     min-width: 8em;
     display: inline-block;
     padding: $measure-small;
@@ -38,14 +38,14 @@ button,
     &:hover,
     &:focus,
     &:active {
-        @include v(background-color, yellow);
-        @include v(color, black);
+        @include v(background-color, red);
+        @include v(color, contrasting-color($color-red));
         text-decoration: none;
     }
 
     &:hover:not(:active),
     &:focus:not(:active) {
-        box-shadow: -0.5rem -0.5rem 0 0 $color-yellow-darkened;
+        box-shadow: -0.5rem -0.5rem 0 0 $color-red-darkened;
     }
 
     &:active {
