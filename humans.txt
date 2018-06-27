@@ -1,0 +1,20 @@
+---
+layout: null
+---
+
+# humanstxt.org
+
+/* TEAM */
+
+    Title: London Web Standards
+    Email: organisers@londonwebstandards.org
+    Twitter: @webstandards
+
+/* SITE */
+
+    Last updated:  {{ 'now' | date: '%F' }}
+    URL:           {{ site.url }}
+    Language:      {{ site.language }}
+    Doctype:       HTML5
+    Fonts:         Fjallo One, Average
+    Compiled with: Jekyll

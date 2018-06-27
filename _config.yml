@@ -1,0 +1,49 @@
+title: State of the Browser
+year:  2018
+lede:  State of the Browser is a one-day, single-track conference with widely varying talks about the modern web.
+color: c83f19
+
+author: London Web Standards
+author_url: https://londonwebstandards.org
+author_email: organisers@londonwebstandards.org
+author_twitter: webstandards
+
+url: https://2018.stateofthebrowser.com/
+baseurl: ''
+
+timezone: Europe/London
+language: en
+
+future: true
+incremental: true
+destination: ./_site
+layouts_dir: ./_layouts
+permalink: /:title/
+sass:
+  sass_dir: _scss
+
+collections:
+  speakers:
+    output: false
+
+emptyArray: []
+
+defaults:
+-
+  scope:
+    path: ''
+    type: 'pages'
+  values:
+    layout: 'default'
+
+exclude:
+- CNAME
+- deploy.sh
+- Gemfile
+- gulpfile.babel.js
+- LICENSE
+- README.md
+- vendor
+
+plugins:
+- jekyll-include-cache

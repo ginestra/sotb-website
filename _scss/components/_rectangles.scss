@@ -1,0 +1,101 @@
+.rectangle {
+    color: $color-white;
+    position: absolute;
+    font-weight: bold;
+    text-align: center;
+    top: 30%;
+    left: 50%;
+    z-index: 0;
+}
+
+.rectangle--yellow {
+    background-color: $color-yellow;
+    width: 20vmin;
+    min-width: 4rem;
+    height: 25vmin;
+    min-height: 5rem;
+    box-shadow: -0.5rem -0.5rem 0 0 $color-yellow-darkened;
+    transform: translateX(-237.5%) translateY(-40%) rotateZ(3deg);
+
+    &:hover {
+        animation: rectangle-yellow 0.1s linear infinite alternate;
+
+        @keyframes rectangle-yellow {
+            from {
+                transform: translateX(-237.5%) translateY(-40%) rotateZ(3deg);
+            }
+            to {
+                transform: translateX(-237.5%) translateY(-40%) rotateZ(6deg);
+            }
+        }
+    }
+}
+
+.rectangle--orange {
+    background-color: $color-orange;
+    width: 20vmin;
+    min-width: 4rem;
+    height: 32.5vmin;
+    min-height: 6.5rem;
+    box-shadow: -0.5rem -0.5rem 0 0 $color-orange-darkened;
+    transform: translateX(-112.5%) translateY(-40%) rotateZ(-3deg);
+
+    &:hover {
+        animation: rectangle-orange 0.1s linear infinite alternate;
+
+        @keyframes rectangle-orange {
+            from {
+                transform: translateX(-112.5%) translateY(-40%) rotateZ(-3deg);
+            }
+            to {
+                transform: translateX(-112.5%) translateY(-40%) rotateZ(-6deg);
+            }
+        }
+    }
+}
+
+.rectangle--red {
+    background-color: $color-red;
+    width: 20vmin;
+    min-width: 4rem;
+    height: 40vmin;
+    min-height: 8rem;
+    box-shadow: -0.5rem -0.5rem 0 0 $color-red-darkened;
+    transform: translateX(12.5%) translateY(-40%) rotateZ(3deg);
+
+    &:hover {
+        animation: rectangle-red 0.1s linear infinite alternate;
+
+        @keyframes rectangle-red {
+            from {
+                transform: translateX(12.5%) translateY(-40%) rotateZ(3deg);
+            }
+            to {
+                transform: translateX(12.5%) translateY(-40%) rotateZ(6deg);
+            }
+        }
+    }
+}
+
+.rectangle--purple {
+    background-color: $color-purple;
+    width:  20vmin;
+    min-width: 4rem;
+    height: 20vmin;
+    min-height: 4rem;
+    box-shadow: -0.5rem -0.5rem 0 0 $color-purple-darkened;
+    transform: translateX(137.5%) translateY(-40%) rotateZ(-3deg);
+
+    &:hover {
+        animation: rectangle-purple 0.1s linear infinite alternate;
+
+        @keyframes rectangle-purple {
+            from {
+                transform: translateX(137.5%) translateY(-40%) rotateZ(-3deg);
+            }
+            to {
+                transform: translateX(137.5%) translateY(-40%) rotateZ(-6deg);
+            }
+        }
+    }
+}

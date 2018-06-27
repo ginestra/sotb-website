@@ -1,0 +1,34 @@
+---
+layout: null
+---
+
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd"
+        xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    {% for page in site.pages %}
+        {% unless page.draft or page.title == null or page.title == empty or page.sitemap.exclude == true %}
+            <url>
+                <loc>{{ page.url | prepend: site.baseurl | prepend: site.url }}</loc>
+                {% if page.sitemap.lastmod %}
+                    <lastmod>{{ page.sitemap.lastmod | date_to_xmlschema }}</lastmod>
+                {% elsif page.edit_date %}
+                    <lastmod>{{ page.edit_date | date_to_xmlschema }}</lastmod>
+                {% elsif page.date %}
+                    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+                {% endif %}
+                {% if page.sitemap.changefreq %}
+                    <changefreq>{{ page.sitemap.changefreq }}</changefreq>
+                {% else %}
+                    <changefreq>{{ site.sitemap.changefreq }}</changefreq>
+                {% endif %}
+                {% if page.sitemap.priority %}
+                    <priority>{{ page.sitemap.priority }}</priority>
+                {% else %}
+                    <priority>{{ site.sitemap.priority }}</priority>
+                {% endif %}
+            </url>
+        {% endunless %}
+    {% endfor %}
+</urlset>

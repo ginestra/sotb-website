@@ -1,0 +1,70 @@
+.speakers {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.speaker {
+    flex: 0 1 calc(50% - #{$measure-large / 2});
+    display: inline-block;
+    margin-bottom: $measure-large;
+    position: relative;
+}
+
+.speaker__image {
+    display: block;
+    transition: filter 0.2s ease;
+
+    :hover > & {
+        filter: none !important; // avoid specificity entanglement
+    }
+
+    :nth-child(4n+1) > & {
+        filter: sepia(1) hue-rotate(0deg) contrast(150%) saturate(150%);
+    }
+
+    :nth-child(4n+2) > & {
+        filter: sepia(1) hue-rotate(-30deg) contrast(150%) saturate(150%);
+    }
+
+    :nth-child(4n+3) > & {
+        filter: sepia(1) hue-rotate(-40deg) contrast(150%) saturate(150%);
+    }
+
+    :nth-child(4n+4) > & {
+        filter: sepia(1) hue-rotate(-90deg) contrast(150%) saturate(150%);
+    }
+}
+
+.speaker__title {
+    display: block;
+    padding: $measure-medium $measure-large;
+    @include font-family(title);
+    @include v(font-size, gamma);
+
+    @include media("screen", ">medium") {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+    }
+
+    :nth-child(4n+1) > & {
+        background-color: $color-yellow;
+        color: contrasting-color($color-yellow);
+    }
+
+    :nth-child(4n+2) > & {
+        background-color: $color-orange;
+        color: contrasting-color($color-orange);
+    }
+
+    :nth-child(4n+3) > & {
+        background-color: $color-red;
+        color: contrasting-color($color-red);
+    }
+
+    :nth-child(4n+4) > & {
+        background-color: $color-purple;
+        color: contrasting-color($color-purple);
+    }
+}
