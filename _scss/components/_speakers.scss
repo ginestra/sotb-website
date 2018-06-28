@@ -33,7 +33,7 @@
         z-index: 1;
     }
 
-    :hover > & {
+    a:hover & {
         filter: none !important; // avoid specificity entanglement
     }
 
@@ -60,7 +60,6 @@
     display: block;
     @include font-family(title);
     @include v(font-size, gamma);
-    box-shadow: -0.5rem -0.5rem 0 0 $color-orange-darkened;
 
     @include media("screen", "<=medium") {
         padding: $measure-small $measure-medium;
@@ -78,36 +77,63 @@
     }
 
     :nth-child(4n+1) > a & {
-        background-color: $color-yellow;
-        color: contrasting-color($color-yellow);
+        @include v(background-color, yellow);
+        @include v(color, contrasting-color($color-yellow));
+        box-shadow: -0.5rem -0.5rem 0 0 $color-yellow-darkened;
     }
 
     :nth-child(4n+2) > a & {
-        background-color: $color-orange;
-        color: contrasting-color($color-orange);
+        @include v(background-color, orange);
+        @include v(color, contrasting-color($color-orange));
+        box-shadow: -0.5rem -0.5rem 0 0 $color-orange-darkened;
     }
 
     :nth-child(4n+3) > a & {
-        background-color: $color-red;
-        color: contrasting-color($color-red);
+        @include v(background-color, red);
+        @include v(color, contrasting-color($color-red));
+        box-shadow: -0.5rem -0.5rem 0 0 $color-red-darkened;
     }
 
     :nth-child(4n+4) > a & {
-        background-color: $color-purple;
-        color: contrasting-color($color-purple);
+        @include v(background-color, purple);
+        @include v(color, contrasting-color($color-purple));
+        box-shadow: -0.5rem -0.5rem 0 0 $color-purple-darkened;
     }
 }
 
 .speaker__presentation {
     @include font-family(title);
-    padding: $measure-medium 0 0;
-    box-shadow: -0.5rem -0.5rem 0 0 $color-red-darkened;
+    padding: $measure-medium;
     z-index: 1;
 
     a:hover &,
     a:focus &,
     a:active & {
         text-decoration: underline;
+    }
+
+    :nth-child(4n+1) > a & {
+        @include v(background-color, yellow);
+        @include v(color, contrasting-color($color-yellow));
+        box-shadow: -0.5rem -0.5rem 0 0 $color-yellow-darkened;
+    }
+
+    :nth-child(4n+2) > a & {
+        @include v(background-color, orange);
+        @include v(color, contrasting-color($color-orange));
+        box-shadow: -0.5rem -0.5rem 0 0 $color-orange-darkened;
+    }
+
+    :nth-child(4n+3) > a & {
+        @include v(background-color, red);
+        @include v(color, contrasting-color($color-red));
+        box-shadow: -0.5rem -0.5rem 0 0 $color-red-darkened;
+    }
+
+    :nth-child(4n+4) > a & {
+        @include v(background-color, purple);
+        @include v(color, contrasting-color($color-purple));
+        box-shadow: -0.5rem -0.5rem 0 0 $color-purple-darkened;
     }
 }
 
@@ -146,6 +172,10 @@
         }
     }
 
+    .speaker__title {
+        box-shadow: -0.5rem -0.5rem 0 0 $color-orange-darkened;
+    }
+
     .speaker__description {
         @include media("screen", "<=medium") {
             flex: 0 1 60%;
@@ -170,8 +200,9 @@
     .speaker__presentation {
         @include v(background-color, red);
         @include v(color, contrasting-color($color-red));
-        padding: $measure-medium $measure-medium $measure-medium $measure-large;
+        padding-left: $measure-large;
         margin-bottom: 0;
+        box-shadow: -0.5rem -0.5rem 0 0 $color-red-darkened;
     }
 
     .speaker__presentation-description {
