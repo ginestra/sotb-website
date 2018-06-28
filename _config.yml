@@ -24,7 +24,8 @@ sass:
 
 collections:
   speakers:
-    output: false
+    output: true
+    permalink: /speaker/:path/
 
 emptyArray: []
 
@@ -35,6 +36,13 @@ defaults:
     type: 'pages'
   values:
     layout: 'default'
+-
+  scope:
+    path: ''
+    type: 'speakers'
+  values:
+    layout: 'speaker'
+    body_class: 'speaker'
 
 exclude:
 - .sass-cache

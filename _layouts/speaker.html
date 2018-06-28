@@ -1,0 +1,22 @@
+{% include top.html %}
+
+<div class="featured-speaker">
+    <div class="featured-speaker__biography">
+        <div class="speaker__contained">
+            <img class="speaker__image" src="/images/speakers/{{ page.image }}" alt="">
+            <div class="speaker__title">{{ page.title }}</div>
+        </div>
+        <div class="speaker__description">{{ page.description | markdownify }}</div>
+    </div>
+    <div class="featured-speaker__presentation">
+        <h3 class="speaker__presentation  beta"><q>{{ page.presentation_title }}</q></h3>
+        <div class="speaker__presentation-description">{{ page.presentation_description | markdownify }}</div>
+    </div>
+</div>
+
+<nav role="navigation" class="button-navigation  button-navigation--centered">
+    <a class="button" href="/speakers">View all Speakers</a>
+    <!-- <a class="button" href="/schedule">View the Schedule</a> -->
+</nav>
+
+{% include bottom.html %}

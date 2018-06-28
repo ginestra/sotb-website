@@ -8,10 +8,20 @@
     flex: 0 1 calc(50% - #{$measure-large / 2});
     display: inline-block;
     margin-bottom: $measure-large;
+
+    a {
+        color: inherit;
+        display: block;
+        text-decoration: none;
+    }
+}
+
+.speaker__contained {
     position: relative;
 }
 
 .speaker__image {
+    width: 100%;
     display: block;
     transition: filter 0.2s ease;
 
@@ -19,24 +29,26 @@
         filter: none !important; // avoid specificity entanglement
     }
 
-    :nth-child(4n+1) > & {
+    :nth-child(4n+1) > a & {
         filter: sepia(1) hue-rotate(0deg) contrast(150%) saturate(150%);
     }
 
-    :nth-child(4n+2) > & {
+    :nth-child(4n+2) > a & {
         filter: sepia(1) hue-rotate(-30deg) contrast(150%) saturate(150%);
     }
 
-    :nth-child(4n+3) > & {
+    :nth-child(4n+3) > a & {
         filter: sepia(1) hue-rotate(-40deg) contrast(150%) saturate(150%);
     }
 
-    :nth-child(4n+4) > & {
+    :nth-child(4n+4) > a & {
         filter: sepia(1) hue-rotate(-90deg) contrast(150%) saturate(150%);
     }
 }
 
 .speaker__title {
+    background-color: $color-red;
+    color: contrasting-color($color-red);
     display: block;
     padding: $measure-medium $measure-large;
     @include font-family(title);
@@ -46,25 +58,106 @@
         position: absolute;
         bottom: 0;
         right: 0;
+        text-align: center;
     }
 
-    :nth-child(4n+1) > & {
+    :nth-child(4n+1) > a & {
         background-color: $color-yellow;
         color: contrasting-color($color-yellow);
     }
 
-    :nth-child(4n+2) > & {
+    :nth-child(4n+2) > a & {
         background-color: $color-orange;
         color: contrasting-color($color-orange);
     }
 
-    :nth-child(4n+3) > & {
+    :nth-child(4n+3) > a & {
         background-color: $color-red;
         color: contrasting-color($color-red);
     }
 
-    :nth-child(4n+4) > & {
+    :nth-child(4n+4) > a & {
         background-color: $color-purple;
         color: contrasting-color($color-purple);
+    }
+}
+
+.speaker__presentation {
+    @include font-family(title);
+    padding: $measure-medium 0 0;
+
+    a:hover &,
+    a:focus &,
+    a:active & {
+        text-decoration: underline;
+    }
+}
+
+.featured-speaker {
+    display: flex;
+
+    @include media("screen", "<=medium") {
+        flex-direction: column;
+    }
+
+    @include media("screen", ">medium") {
+        flex-direction: row;
+    }
+
+    .featured-speaker__biography,
+    .featured-speaker__presentation {
+        flex: 0 1 50%;
+    }
+
+    .featured-speaker__biography {
+        @include media("screen", "<=medium") {
+            display: flex;
+            flex-direction: row;
+            padding-bottom: $measure-large;
+        }
+        @include media("screen", "<=small") {
+            display: flex;
+            flex-direction: column;
+            padding-bottom: $measure-large;
+        }
+    }
+
+    .speaker__contained,
+    .speaker__description {
+        @include media("screen", "<=medium") {
+            flex: 0 1 50%;
+        }
+    }
+
+    .speaker__description {
+        @include media("screen", "<=small") {
+            padding: $measure-medium;
+        }
+
+        @include media("screen", ">small", "<=medium") {
+            padding: 0 0 0 $measure-large;
+        }
+
+        @include media("screen", ">medium") {
+            background-color: rgba($color-black, 0.1);
+            padding: $measure-large $measure-medium $measure-medium;
+        }
+    }
+
+    .speaker__presentation {
+        @include v(background-color, red);
+        @include v(color, contrasting-color($color-red));
+        padding: $measure-medium $measure-medium $measure-medium $measure-large;
+        margin-bottom: 0;
+    }
+
+    .speaker__presentation-description {
+        @include media("screen", "<=medium") {
+            padding: $measure-large $measure-medium $measure-medium;
+        }
+
+        @include media("screen", ">medium") {
+            padding: $measure-large 0 0 $measure-large;
+        }
     }
 }

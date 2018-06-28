@@ -1,0 +1,96 @@
+{%- capture meta_title -%}{% unless page.page_class contains 'home' %}{{ page.title }} | {% endunless %}{{ site.title }} {{ site.year }}{%- endcapture -%}
+{%- assign meta_lede = page.lede | default: site.lede -%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>{{ meta_title }}</title>
+
+    <link rel="author" href="/humans.txt">
+    <link rel="manifest" type="application/manifest+json" href="/manifest.json">
+
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="application-name" content="{{ site.title }}">
+    <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
+    <meta name="msapplication-starturl" content="{{ site.baseurl | prepend: site.url }}">
+    <meta name="description" content="{{ site.lede }}">
+    <meta name="theme-color" content="#{{ site.color }}">
+    <meta name="msapplication-navbutton-color" content="#{{ site.color }}">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta http-equiv="cleartype" content="on">
+
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.ico">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#{{ site.color }}">
+
+    <!-- The URL -->
+    <link rel="canonical" href="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- Twitter Microdata -->
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:creator" content="@{{ site.author_twitter }}">
+    <meta name="twitter:title" content="{{ meta_title }}">
+    <meta name="twitter:description" content="{{ meta_lede }}">
+    <meta name="twitter:image" content="{{ '/android-chrome-192x192.png' | prepend: site.baseurl | prepend: site.url }}">
+    <meta name="twitter:domain" content="{{ site.url | remove: 'http://' | remove: 'https://' }}">
+
+    <!-- OpenGraph Microdata -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ meta_title }}">
+    <meta property="og:description" content="{{ meta_lede }}">
+    <meta property="og:locale" content="{{ site.language }}">
+    <meta property="og:image" content="{{ '/android-chrome-192x192.png' | prepend: site.baseurl | prepend: site.url }}">
+    <meta property="og:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+
+    <!-- Google Sitelinks Searchbox -->
+    <script type="application/ld+json">
+        {
+            "@context": "http://schema.org",
+            "type": "WebSite",
+            "url": "{{ page.url | prepend: site.baseurl | prepend: site.url }}",
+            "headline": "{{ meta_title }}",
+            "description": "{{ meta_lede }}",
+            "author": {
+                "@type": "Organisation",
+                "name": "{{ site.author }}"
+            },
+            "sameAs": [
+                "https://twitter.com/{{ site.author_twitter }}"
+            ]
+        }
+    </script>
+
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body{% if page.page_class %} class="{{ page.page_class }}"{% endif %} itemscope itemtype="https://schema.org/WebPage">
+    <a class="hidden" href="/home">Go to the homepage</a>
+    <a class="hidden" href="#content">Skip to main content</a>
+    <header class="header">
+        <div class="header__center">
+            <div class="rectangle  rectangle--yellow" aria-hidden="true"></div>
+            <div class="rectangle  rectangle--orange" aria-hidden="true"></div>
+            <div class="rectangle  rectangle--red" aria-hidden="true"></div>
+            <div class="rectangle  rectangle--purple" aria-hidden="true"></div>
+            <h1><a href="/">{{ site.title }}</a></h1>
+            <h2>Conway Hall, London</h2>
+            <h2><time datetime="">Saturday, 8 September 2018</time></h2>
+        </div>
+        <nav class="primary-navigation">
+            <ul class="primary-navigation__list">
+                <li><a href="/speakers" class="primary-navigation__link  primary-navigation__link--speakers">Speakers</a></li>
+                <li><a href="/schedule" class="primary-navigation__link  primary-navigation__link--schedule">Schedule</a></li>
+                <li><a href="/location" class="primary-navigation__link  primary-navigation__link--venue">Venue</a></li>
+                <li><a href="/sponsors" class="primary-navigation__link  primary-navigation__link--sponsors">Sponsors</a></li>
+                <li><a href="/#tickets" class="primary-navigation__link  primary-navigation__link--get-tickets">Tickets</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="wrap" role="main">
+        <section class="content" id="content" role="document" itemscope itemtype="https://schema.org/WebPage">

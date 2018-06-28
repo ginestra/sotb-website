@@ -6,16 +6,18 @@ title: Speakers
 
 <h2 class="title">{{ page.title }}</h2>
 
-<!-- <ul class="speakers">
+<ul class="speakers">
     {% for speaker in site.speakers %}
         <li class="speaker  speaker--{{ speaker.slug }}">
-            <img class="speaker__image" src="/images/speakers/{{ speaker.image }}" alt="">
-            <div class="speaker__title">{{ speaker.title }}</div>
-            <div class="speaker__presentation">{{ speaker.presentation }}</div>
+            <a href="/speaker/{{ speaker.slug }}">
+                <div class="speaker__contained">
+                    <img class="speaker__image" src="/images/speakers/{{ speaker.image }}" alt="">
+                    <div class="speaker__title">{{ speaker.title }}</div>
+                </div>
+                <h3 class="speaker__presentation"><q>{{ speaker.presentation_title }}</q></h3>
+            </a>
         </li>
     {% endfor %}
-</ul> -->
-
-<p><strong>To be announced!</strong></p>
+</ul>
 
 <p>Follow us on Twitter for updates: <a href="https://twitter.com/webstandards" rel="external  noopener">@webstandards</a></p>

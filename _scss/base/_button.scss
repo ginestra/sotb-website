@@ -13,7 +13,9 @@ button,
     @include will-change(background-color, color, box-shadow, transform);
     background-color: transparent;
     @include v(color, black);
-    min-width: 8em;
+    min-width: 8rem;
+    width: 12rem;
+    max-width: 100%;
     display: inline-block;
     padding: $measure-small;
     border-width: 0;
