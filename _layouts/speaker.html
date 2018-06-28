@@ -6,7 +6,15 @@
             <img class="speaker__image" src="/images/speakers/{{ page.image }}" alt="">
             <div class="speaker__title">{{ page.title }}</div>
         </div>
-        <div class="speaker__description">{{ page.description | markdownify }}</div>
+        <div class="speaker__description">
+            {{ page.description | markdownify }}
+            {% if page.twitter %}
+                <div><a href="https://twitter.com/{{ page.twitter }}" title="{{ page.title }} on Twitter">@{{ page.twitter }}</a></div>
+            {% endif %}
+            {% if page.website %}
+                <div><a href="{{ page.website }}" title="{{ page.title }}’s Website">{{ page.website | replace: "http://", "" | replace: "https://", "" }}</a></div>
+            {% endif %}
+        </div>
     </div>
     <div class="featured-speaker__presentation">
         <h3 class="speaker__presentation  beta"><q>{{ page.presentation_title }}</q></h3>

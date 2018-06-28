@@ -29,6 +29,10 @@
     display: block;
     transition: filter 0.2s ease;
 
+    @include media("screen", ">medium") {
+        z-index: 1;
+    }
+
     :hover > & {
         filter: none !important; // avoid specificity entanglement
     }
@@ -51,18 +55,26 @@
 }
 
 .speaker__title {
-    background-color: $color-red;
-    color: contrasting-color($color-red);
+    @include v(background-color, orange);
+    @include v(color, contrasting-color($color-orange));
     display: block;
-    padding: $measure-medium $measure-large;
     @include font-family(title);
     @include v(font-size, gamma);
+    box-shadow: -0.5rem -0.5rem 0 0 $color-orange-darkened;
+
+    @include media("screen", "<=medium") {
+        padding: $measure-small $measure-medium;
+        position: relative;
+        z-index: 1;
+    }
 
     @include media("screen", ">medium") {
+        padding: $measure-medium $measure-large;
         position: absolute;
         bottom: 0;
         right: 0;
         text-align: center;
+        z-index: 2;
     }
 
     :nth-child(4n+1) > a & {
@@ -89,6 +101,8 @@
 .speaker__presentation {
     @include font-family(title);
     padding: $measure-medium 0 0;
+    box-shadow: -0.5rem -0.5rem 0 0 $color-red-darkened;
+    z-index: 1;
 
     a:hover &,
     a:focus &,
@@ -126,10 +140,15 @@
         }
     }
 
-    .speaker__contained,
+    .speaker__contained {
+        @include media("screen", "<=medium") {
+            flex: 0 1 40%;
+        }
+    }
+
     .speaker__description {
         @include media("screen", "<=medium") {
-            flex: 0 1 50%;
+            flex: 0 1 60%;
         }
     }
 
