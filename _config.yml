@@ -11,6 +11,8 @@ author_twitter: webstandards
 url: https://2018.stateofthebrowser.com/
 baseurl: ''
 
+port: 3000
+
 timezone: Europe/London
 language: en
 
