@@ -5,9 +5,16 @@
 }
 
 .speaker {
-    flex: 0 1 calc(50% - #{$measure-large / 2});
     display: inline-block;
     margin-bottom: $measure-large;
+
+    @include media("screen", "<=small") {
+        flex: 1 0 100%;
+    }
+
+    @include media("screen", ">small") {
+        flex: 0 1 calc(50% - #{$measure-large / 2});
+    }
 
     a {
         color: inherit;
@@ -102,9 +109,17 @@
 }
 
 .speaker__presentation {
+    @extend %gamma;
     @include font-family(title);
     padding: $measure-medium;
-    z-index: 1;
+
+    @include media("screen", "<=medium") {
+        z-index: 0;
+    }
+
+    @include media("screen", ">medium") {
+        z-index: 1;
+    }
 
     a:hover &,
     a:focus &,
