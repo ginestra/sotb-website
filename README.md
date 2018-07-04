@@ -11,7 +11,8 @@ The website is viewable at <https://2018.stateofthebrowser.com>.
 - figure out how to make the design more interesting?
 - add interaction through better hover states, transitions, animations
 - ensure ServiceWorker and Manifest are as we want them
-- figure out how to go Push notifications
+- We may have dual speakers. How do we present them on the website?
+- figure out how to go Push notifications (last priority)
 
 # Build pipeline
 
