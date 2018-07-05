@@ -103,6 +103,26 @@ $color-white: white !default;
 /// @type Color
 $color-yellow: #dea702;
 /// @type Color
+$primary: (
+    'yellow': #dea702,
+    'orange': #c83f19,
+    'red': #c61540,
+    'purple': #702055,
+);
+$shades: (
+    'yellow-light': #fae000,
+    'yellow-secondary': #ecb156,
+    'yellow-dark': #a87f1a,
+    'orange-light': #f36e2d,
+    'orange-secondary': #e05665,
+    'orange-dark': #a13e17,
+    'red-light': #f2266f,
+    'red-secondary': #df3080,
+    'red-dark': #9f1833,
+    'purple-light': #af3a8e, 
+    'purple-dark': #51163d
+);
+// @include add-colors($primary, $shades);
 $color-yellow-darkened: #a87f1a;
 $color-orange: #c83f19;
 $color-orange-darkened: #a13e17;
