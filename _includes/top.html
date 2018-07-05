@@ -1,5 +1,5 @@
 {%- capture meta_title -%}{% unless page.page_class contains 'home' %}{{ page.title }} | {% endunless %}{{ site.title }} {{ site.year }}{%- endcapture -%}
-{%- assign meta_lede = page.lede | default: site.lede -%}
+{%- assign meta_lede = page.description | default: page.lede | default: site.lede | strip_newlines | strip_html -%}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -17,7 +17,7 @@
     <meta name="application-name" content="{{ site.title }}">
     <meta name="apple-mobile-web-app-title" content="{{ site.title }}">
     <meta name="msapplication-starturl" content="{{ site.baseurl | prepend: site.url }}">
-    <meta name="description" content="{{ site.lede }}">
+    <meta name="description" content="{{ meta_lede }}">
     <meta name="theme-color" content="#{{ site.color }}">
     <meta name="msapplication-navbutton-color" content="#{{ site.color }}">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
