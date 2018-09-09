@@ -15,6 +15,7 @@ order: 1
 ogImage: /images/cards/michelle-barker.png
 talk:
   links:
+    - link: https://noti.st/mbarker84/GzviRt/super-powered-layouts-with-css-grid-and-css-variables
     - link: https://codepen.io/michellebarker/pen/eLZwVg
     - link: https://codepen.io/michellebarker/pen/wEdjqX
     - link: https://codepen.io/michellebarker/pen/gdrVXP

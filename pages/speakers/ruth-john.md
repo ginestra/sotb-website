@@ -22,6 +22,7 @@ talk:
     - link: http://houdini.glitch.me/
     - link: https://googlechromelabs.github.io/web-audio-samples/audio-worklet/
     - link: https://dsp.audio/editor/
+    - link: https://medium.com/samsung-internet-dev/vj-on-the-go-e56666fe55eb
 ---
 
 Remember that time we all learnt how to make audio visualisations in our browser? No? Well don’t worry we’ll do that, but this time we’ll be looking at the performance of it all. Analysing audio, running a 2D canvas context, animating everything, running it live! It’s not for the faint hearted. And it sure wasn’t for the hardware Ruth was running either.
